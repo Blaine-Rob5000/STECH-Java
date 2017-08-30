@@ -1,5 +1,5 @@
 //STECH Java programming class
-//Exercise 2-24
+//Exercise 3-24
 //Created by Robin G. Blaine on 8/22/2017
 //display a random card value and suit from a 52 card deck
 
@@ -10,16 +10,6 @@ class Exercise_3_24 {
 		
 		//generate a random suit
 		int suit = (int)(Math.random() * 4) + 1;
-
-/*
-begin debug
-
-System.out.println(value);
-System.out.println(suit);
-System.out.println("");
-
-end debug
-*/
 		
 		//display the card value and suit
 		System.out.print("Your card is the ");
@@ -62,5 +52,5 @@ end debug
 			System.out.print("Hearts!");
 		else
 			System.out.print("Suit Error!");
-	} //end main
-} //end Exercise_3_24
+	}	//end main
+}	//end Exercise_3_24
