@@ -3,7 +3,7 @@
 //Created by Robin G. Blaine on 8/22/2017
 //display a random card value and suit from a 52 card deck
 
-class Exercise_2_24 {
+class Exercise_3_24 {
 	public static void main(String[] args) {
 		//generate a random card value
 		int value = (int)(Math.random() * 13) + 1;
@@ -62,5 +62,5 @@ end debug
 			System.out.print("Hearts!");
 		else
 			System.out.print("Suit Error!");
-	}
-}
+	} //end main
+} //end Exercise_3_24
