@@ -38,12 +38,13 @@ public class Rectangle {
 		System.out.println("    Perimeter:    " + rectangle3.getPerimeter());
 		System.out.println("");
 		
-		//create a rectangle with width 67.67 and height 98.33
-		Rectangle rectangle4 = new Rectangle(67.67, 98.33);
-		System.out.println("Rectangle 4");
-		System.out.println("  Width x Height: " + rectangle4.width + " x " + rectangle4.height);
-		System.out.println("    Area:         " + rectangle4.getArea());
-		System.out.println("    Perimeter:    " + rectangle4.getPerimeter());
+		//modify rectangle2 to have width 67.67 and height 98.33
+		rectangle2.width  = 67.67;
+		rectangle2.height = 98.33;
+		System.out.println("Rectangle 2 (new stats)");
+		System.out.println("  Width x Height: " + rectangle2.width + " x " + rectangle2.height);
+		System.out.println("    Area:         " + rectangle2.getArea());
+		System.out.println("    Perimeter:    " + rectangle2.getPerimeter());
 		System.out.println("");
 		
 	}	//end main
