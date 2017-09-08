@@ -31,10 +31,7 @@ public class Exercise_10_14 {
 		System.out.println("   Year: " + date1.getYear());
 		System.out.println("  Month: " + date1.getMonth());
 		System.out.println("    Day: " + date1.getDay());
-		
-		
 		System.out.println("");
-		
 		
 		//set and display date2
 		MyDate date2 = new MyDate(34355555133101L);
@@ -42,7 +39,25 @@ public class Exercise_10_14 {
 		System.out.println("   Year: " + date2.getYear());
 		System.out.println("  Month: " + date2.getMonth());
 		System.out.println("    Day: " + date2.getDay());
-				
+		System.out.println("");
+		
+		//set and display date3
+		MyDate date3 = new MyDate(1970, 8, 1);
+		System.out.println(" * * * date3 * * *");
+		System.out.println("   Year: " + date3.getYear());
+		System.out.println("  Month: " + date3.getMonth());
+		System.out.println("    Day: " + date3.getDay());
+		System.out.println("");
+		
+		//change and display date1
+		date1.setDate(24355555133101L);
+		System.out.println(" * * * date1 (revised) * * *");
+		System.out.println("   Year: " + date1.getYear());
+		System.out.println("  Month: " + date1.getMonth());
+		System.out.println("    Day: " + date1.getDay());
+		System.out.println("");
+		
+		
 	}	//end main
 		
 }	//end Exercise_10_14
