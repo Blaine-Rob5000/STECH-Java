@@ -19,23 +19,74 @@ Write a test program that creates a Person , Student , Employee , Faculty , and 
 
 
 //imports
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.Date;
+import java.util.GregorianCalendar;;
 
 
 public class Exercise_10_7 {
 	
 	public static void main(String[] args) {
 		
-		//create Scanner
-		Scanner input = new Scanner(System.in);		
+		//create a Person and display toString() method
+		Person person = new Person("William Hartnell",
+			"221-B Baker St, London, England 12345",
+			"(555) 123-4567",
+			"whoson1st@gmail.com");
+		System.out.println("Person demo:");
+		System.out.println(person.toString());
+		System.out.println("");
 		
 		
+		//create a Student and display toString() method
+		Student student = new Student("Patrick Troughton",
+			"667 Big Ben Plaza, London, England 23456",
+			"(555) 234-5678",
+			"twice_as_nice@yahoo.com",
+			"sophomore");
+		System.out.println("Student demo:");
+		System.out.println(student.toString());
+		System.out.println("");
 		
 		
+		//create an Employee and display toString() method
+		Employee employee = new Employee("Jon Pertwee",
+			"667 N Beast Ln, London, England 34567",
+			"(555) 345-6789",
+			"third_times_the_charm@aol.com",
+			"SB 101",
+			77777.77,
+			MyDate(1970, 8, 1));
+		System.out.println("Employee demo:");
+		System.out.println(employee.toString());
+		System.out.println("");		
 		
 		
+		//create a Faculty and display toString() method
+		Faculty faculty = new Faculty("Tom Baker",
+			"9001 Tardis Way, London, England 45678",
+			"(555) 456-7890",
+			"the_best_doctor@earthlink.net",
+			"QM 299",
+			157677.67,
+			MyDate(1975, 3, 3),
+			"11:00 AM to 1:00 PM, MWF",
+			"Master");
+		System.out.println("Faculty demo:");
+		System.out.println(faculty.toString());
+		System.out.println("");		
+		
+		
+		//create a Staff and display toString() method
+		Staff staff = new Staff("Peter Davidson",
+			"1313 Celery Circle, London, England 56789",
+			"(555) 567-8901",
+			"i_tried_my_best@jerk.com",
+			"Toilet Stall no. 72",
+			1.51,
+			MyDate(1980, 10, 10),
+			"Custodian");
+		System.out.println("Staff demo:");
+		System.out.println(staff.toString());
+		System.out.println("");		
 		
 	}	//end main
 
@@ -225,7 +276,7 @@ public Class Employee
 				"Email Address: " + this.emailAddress + "\n" +
 				"Office: " + this.office + "\n" +
 				"Salary: " + this.salary + "\n" +
-				"Date Hired: " + this.dateHired);
+				"Date Hired: " + this.dateHired.toString());
 	}	//end toString Override
 	
 }	//end subclass Employee => Person
@@ -282,7 +333,7 @@ public Class Faculty
 				"Email Address: " + this.emailAddress + "\n" +
 				"Office: " + this.office + "\n" +
 				"Salary: " + this.salary + "\n" +
-				"Date Hired: " + this.dateHired + "\n" +
+				"Date Hired: " + this.dateHired.toString() + "\n" +
 				"Office Hours: " + this.officeHours + "\n" +
 				"Rank: " + this.rank);
 	}	//end toString Override
@@ -328,7 +379,7 @@ public Class Staff
 				"Email Address: " + this.emailAddress + "\n" +
 				"Office: " + this.office + "\n" +
 				"Salary: " + this.salary + "\n" +
-				"Date Hired: " + this.dateHired + "\n" +
+				"Date Hired: " + this.dateHired.toString() + "\n" +
 				"Title: " + this.title);
 	}	//end toString Override
 	
@@ -397,5 +448,11 @@ class MyDate {
 		this.month = date.get(GregorianCalendar.MONTH);
 		this.day = date.get(GregorianCalendar.DATE);
 	}	//end setDate
+	
+	//convert to String
+	@Override
+	public String toString() {
+		return (this.getMonth + "/" + this.getDay + "/" + this.getYear);
+	}
 	
 }	//end MyDate class
