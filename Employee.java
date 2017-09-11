@@ -20,7 +20,7 @@ public class Employee
 		super(name, address, phoneNumber, emailAddress);
 		this.office = office;
 		this.salary = salary;
-		this.dateHired = new MyDate(dateHired);
+		this.dateHired = new MyDate(dateHired.getYear(), dateHired.getMonth(), dateHired.getDay());
 	}	//end Employee specified constructor
 	
 	//getter: office
@@ -50,7 +50,7 @@ public class Employee
 	
 	//mutator: dateHired
 	public void setDateHired(MyDate dateHired) {
-		this.dateHired = new MyDate(dateHired);
+		this.dateHired = new MyDate(dateHired.getYear(), dateHired.getMonth(), dateHired.getDay());
 	}	//end setDateHired
 	
 	//convert to String
@@ -62,7 +62,7 @@ public class Employee
 				"Email Address: " + this.emailAddress + "\n" +
 				"Office: " + this.office + "\n" +
 				"Salary: " + this.salary + "\n" +
-				"Date Hired: " + MyDate(this.dateHired).toString());
+				"Date Hired: " + dateHired.toString());
 	}	//end toString Override
 	
 }	//end subclass Employee => Person
