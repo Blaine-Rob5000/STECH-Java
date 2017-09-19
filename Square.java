@@ -4,11 +4,8 @@
 
 
 /*
-
 13.7 (The Colorable interface) Design an interface named Colorable with a void method named howToColor() . Every class of a colorable object must implement the Colorableinterface. Design a class named Square that extends GeometricObject and implements Colorable . Implement howToColor to display the message Color all four sides .
-
 Draw a UML diagram that involves Colorable , Square , and GeometricObject . Write a test program that creates an array of five GeometricObject s. For each object in the array, display its area and invoke its howToColor method if it is colorable.
-
 */
 
 
@@ -52,20 +49,21 @@ public class Square extends GeometricObject {
 	}	//end getPerimeter
 	
 	//return howToColor
-	public String howToColor() {
-		return "Color all four sides.";
+	@Override
+	public void howToColor() {
+		System.out.println ("Color all four sides.");
 	}
 	
 	//return string description (override)
 	@Override
 	public String toString() {
+//		this.howToColor();
 		return ("  Created on: " + dateCreated +
 				"\n       Color: " + color +
 				"\n      Filled: " + filled + 
 				"\n        Side: " + side +
 				"\n        Area: " + this.getArea() +
-				"\n   Perimeter: " + this.getPerimeter() +
-				"\nHow to Color: " + this.howToColor());
+				"\n   Perimeter: " + this.getPerimeter());
 	}	//end toString (override)
 	
 }	//end Square subclass
