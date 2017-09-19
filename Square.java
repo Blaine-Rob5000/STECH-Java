@@ -57,13 +57,12 @@ public class Square extends GeometricObject {
 	//return string description (override)
 	@Override
 	public String toString() {
-//		this.howToColor();
 		return ("  Created on: " + dateCreated +
-				"\n       Color: " + color +
-				"\n      Filled: " + filled + 
-				"\n        Side: " + side +
-				"\n        Area: " + this.getArea() +
-				"\n   Perimeter: " + this.getPerimeter());
+			  "\n       Color: " + color +
+			  "\n      Filled: " + filled + 
+			  "\n        Side: " + side +
+			  "\n        Area: " + this.getArea() +
+			  "\n   Perimeter: " + this.getPerimeter());
 	}	//end toString (override)
 	
 }	//end Square subclass
