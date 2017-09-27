@@ -43,7 +43,7 @@ public class KeyEventDemo extends Application {
 		
 		// Create a scene and place it in the stage
 		Scene scene = new Scene(pane, 300, 100);
-		primaryStage.setTitle("MouseEventDemo");		// Set the stage title
+		primaryStage.setTitle("KeyEventDemo");		// Set the stage title
 		primaryStage.setScene(scene);					// Place the scene in the stage
 		primaryStage.show();							// Display the stage
 		
