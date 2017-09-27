@@ -3,9 +3,7 @@
 //created by Robin G. Blaine on 9/26/17
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
 14.28 (Random time) Modify the ClockPane class with three new Boolean properties— hourHandVisible , minuteHandVisible , and secondHandVisible —and their associated accessor and mutator methods. You can use the set methods to make a hand visible or invisible. Write a test program that displays only the hour and minute hands. The hour and minute values are randomly generated. The hour is between 0 and 11 , and the minute is either 0 or 30 , as shown in Figure  14.52b.
-
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 
@@ -36,6 +34,10 @@ public class Exercise14_28 extends Application {
 		primaryStage.setTitle("Exercise14_28");	// Set the stage title
 		primaryStage.setScene(scene);			// Place the scene in the stage
 		primaryStage.show();					// Display the stage
+		
+		// Add listeners for the pane width and height
+		scene.widthProperty().addListener(ov -> randomClock.setW(scene.getWidth()));
+		scene.heightProperty().addListener(ov -> randomClock.setH(scene.getHeight()));
 		
 	}	// end start
 	
