@@ -48,7 +48,8 @@ public class ControlCircle extends Application {
 		borderPane.setAlignment(hBox, Pos.CENTER);
 		
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(borderPane, 200, 150);
+		int w = 200, h = 150;
+		Scene scene = new Scene(borderPane, w, h);
 		primaryStage.setTitle("ControlCircle");		// Set the stage title
 		primaryStage.setScene(scene);				// Place the scene on the stage
 		primaryStage.show();						// Display the stage
@@ -79,7 +80,8 @@ class CirclePane extends StackPane {
 	}	// end CirclePane default constructor
 	
 	public void enlarge() {
-		circle.setRadius(circle.getRadius() < 60 ?
+		double maxRadius = Math.min(this.getWidth(), this.getHeight()) * .45;
+		circle.setRadius(circle.getRadius() < maxRadius ?
 			circle.getRadius() + 2 : circle.getRadius());
 		System.out.println(circle.getRadius());
 	}	// end enlarge method
@@ -90,7 +92,3 @@ class CirclePane extends StackPane {
 			System.out.println(circle.getRadius());
 	}	// end shrink method
 }	// end CirclePane class
-
-
-
-
