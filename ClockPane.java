@@ -1,6 +1,6 @@
 //STECH Java Programming Class
 //Exercise14_28: ClockPane class
-//created by Robin G. Blaine on 9/26/17
+//revised by Robin G. Blaine on 9/26/17
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
