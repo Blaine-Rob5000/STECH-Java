@@ -52,9 +52,9 @@ public class Exercise15_4 extends Application {
 		
 		// Set properties for UI
 		gridPane.setAlignment(Pos.CENTER);
-		tfNumber1.setAlignment(Pos.CENTER_RIGHT);
-		tfNumber2.setAlignment(Pos.CENTER_RIGHT);
-		tfResult.setAlignment(Pos.CENTER_RIGHT);
+		tfNumber1.setAlignment(Pos.CENTER);
+		tfNumber2.setAlignment(Pos.CENTER);
+		tfResult.setAlignment(Pos.CENTER);
 		tfResult.setEditable(false);
 		GridPane.setHalignment(btAdd,      HPos.CENTER);
 		GridPane.setHalignment(btSubtract, HPos.CENTER);
