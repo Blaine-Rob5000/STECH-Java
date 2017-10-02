@@ -70,4 +70,9 @@ public class Exercise15_26 extends Application {
 		primaryStage.setScene(scene);					// Place the scene in the stage
 		primaryStage.show();							// Display the stage
 	}	// end start
+	
+	// Main method
+	public static void main(String[] args) {
+		Application.launch(args);
+	}	// end main
 }	// end Exercise15_26
