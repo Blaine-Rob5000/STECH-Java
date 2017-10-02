@@ -3,9 +3,7 @@
 // created/modified by Robin G. Blaine on 9/29/17
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
 	15.11 (Move a circle using keys) Write a program that moves a circle up, down, left, or right using the arrow keys.
-
 	Hint: Use selection statements such as "e.getCode() == KeyCode.UP" to move the circle a few pixels at a time
 	
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
@@ -18,7 +16,6 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
-import javax.xml.stream.events.*;
 
 
 public class Exercise15_11 extends Application {	
