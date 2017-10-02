@@ -52,4 +52,9 @@ public class Exercise15_11 extends Application {
 		
 		circle.requestFocus();						// text is focused to recieve key input
 	}	// end start
+	
+	// Main method
+	public static void main(String[] args) {
+		Application.launch(args);
+	}	// end main
 }	// end Exercise15_11
