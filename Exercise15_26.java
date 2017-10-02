@@ -74,5 +74,5 @@ public class Exercise15_26 extends Application {
 	// Main method
 	public static void main(String[] args) {
 		Application.launch(args);
-	}	// end main
+	}	// end main 
 }	// end Exercise15_26
