@@ -1,5 +1,5 @@
 // STECH Java programming class
-// Test
+// Module 7 Quiz, Question 22
 // created by Robin G. Blaine
 
 //imports
