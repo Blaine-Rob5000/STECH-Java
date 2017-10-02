@@ -53,7 +53,7 @@ public class Exercise15_26 extends Application {
 		
 		// Create a path transition
 		PathTransition pt = new PathTransition();
-		pt.setDuration(Duration.millis(4000));
+		pt.setDuration(Duration.millis(3000));
 		pt.setPath(arc);
 		pt.setNode(circle);
 		pt.setOrientation(PathTransition.OrientationType.ORTHOGONAL_TO_TANGENT);
