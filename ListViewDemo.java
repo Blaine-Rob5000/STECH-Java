@@ -61,8 +61,8 @@ public class ListViewDemo extends Application {
 		);
 		
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(pane, 700, 150);
-		primaryStage.setTitle("LabelWithGraphic");
+		Scene scene = new Scene(pane, 900, 320);
+		primaryStage.setTitle("ListViewDemo");
 		primaryStage.setScene(scene);
 		primaryStage.show();
 			
