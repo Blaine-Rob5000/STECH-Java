@@ -1,5 +1,5 @@
 // STECH Java programming class
-// LabelWithGraphic
+// ListViewDemo
 // created by Robin G. Blaine
 
 // imports
