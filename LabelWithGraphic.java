@@ -1,6 +1,7 @@
 // STECH Java programming class
 // LabelWithGraphic
-// created by Robin G. Blaine
+// from textbook Introduction to Java Programming, Brief Version, 10th edition
+// input/modified by Robin G. Blaine
 
 // imports
 import javafx.application.Application;
