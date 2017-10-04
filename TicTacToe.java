@@ -40,7 +40,7 @@ public class TicTacToe extends Application {
 		borderPane.setBottom(lblStatus);
 		
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(borderPane, 450, 170);
+		Scene scene = new Scene(borderPane, 300, 300);
 		primaryStage.setTitle("TicTacToe");
 		primaryStage.setScene(scene);
 		primaryStage.show();
@@ -111,7 +111,7 @@ public class TicTacToe extends Application {
 		
 		// Set a new token
 		public void setToken(char c) {
-			char token = c;
+			token = c;
 			
 			// Draw an X or an O
 			if (token == 'X') {
@@ -137,30 +137,30 @@ public class TicTacToe extends Application {
 				getChildren().add(ellipse);
 			}	// end Draw an O
 		}	// end setToken
-	}	// end inner class Cell
 	
-	// Handel a mouse click event
-	private void handleMouseClick() {
-		// If the cell is empty and game is not over
-		if (token == ' ' && whoseTurn != ' ') {
-			setToken(whoseTurn);
+		// Handel a mouse click event
+		private void handleMouseClick() {
+			// If the cell is empty and game is not over
+			if (token == ' ' && whoseTurn != ' ') {
+				setToken(whoseTurn);
 			
-			// Check game status
-			if (isWon(whoseTurn)) {
-				lblStatus.setText(whoseTurn + " won!  The game is over");
-				whoseTurn = ' ';
-			}
-			else if (isFull()) {
-				lblStatus.setText("Draw!  The game is over");
-				whoseTurn = ' ';
-			}
-			else {
-				// Change the turn
-				whoseTurn = (whoseTurn == 'X') ? 'O' : 'X';
-				// Display whose turn
-				lblStatus.setText(whoseTurn + "'s turn");
+				// Check game status
+				if (isWon(whoseTurn)) {
+					lblStatus.setText(whoseTurn + " won!  The game is over");
+					whoseTurn = ' ';
+				}
+				else if (isFull()) {
+					lblStatus.setText("Draw!  The game is over");
+					whoseTurn = ' ';
+				}
+				else {
+					// Change the turn
+					whoseTurn = (whoseTurn == 'X') ? 'O' : 'X';
+					// Display whose turn
+					lblStatus.setText(whoseTurn + "'s turn");
+				}	// end if
 			}	// end if
-		}	// end if
+		}	// end inner class Cell
 	}	// end handleMouseClick
 	
 	// main method
@@ -168,6 +168,4 @@ public class TicTacToe extends Application {
 		launch(args);
 	}	// end main
 }	// end TicTacToe
-
-
 
