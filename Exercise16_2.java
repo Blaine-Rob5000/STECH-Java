@@ -1,5 +1,3 @@
-import java.awt.color.*;
-
 // STECH Java Programming Class
 // Excercise16_2.java
 // created/modified by Robin G. Blaine on 10/4/17
