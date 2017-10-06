@@ -4,7 +4,7 @@
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-	16.4 (Create a miles/kilometers converter) Write a program that converts miles and kilometers, as shown in Figure  16.37b. If you enter a value in the Mile text field and press the Enter key, the corresponding kilometer measurement is displayed in the Kilometer text field. Likewise, if you enter a value in the Kilometer text field and press the Enter key, the corresponding miles is displayed in the Mile text field.
+	16.21 (Count-down stopwatch) Write a program that allows the user to enter time in seconds in the text field and press the Enter key to count down the seconds, as shown in Figure  16.45d. The remaining seconds are redisplayed every one second. When the seconds are expired, the program starts to play music continuously.
 			
  * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
