@@ -79,7 +79,6 @@ public class Exercise16_21 extends Application {
 		
 	}	// end start
 
-	
 	public boolean isInteger(String text) {
 		for (int index = 0; index < text.length(); index++) {
 			if (!Character.isDigit(text.charAt(index))) {
@@ -88,7 +87,6 @@ public class Exercise16_21 extends Application {
 		}	// end for
 		return true;				// else return true
 	}	// end isInteger
-	
 	
 	public static void main(String[] args) {
 		launch(args);
