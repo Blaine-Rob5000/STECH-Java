@@ -371,7 +371,22 @@ public class OpenLegendCharacterEditor extends Application {
         rbMovement.setToggleGroup(attributeToggleGroup);
         rbPrescience.setToggleGroup(attributeToggleGroup);
         rbProtection.setToggleGroup(attributeToggleGroup);
-
+        
+        
+        HBox paneForDescriptions = new HBox();
+        
+        VBox paneForMessage = new VBox();
+        Label lbDescription = new Label("Description");
+        ScrollPane spDescription = new ScrollPane();
+        TextArea taDescription = new TextArea();
+        
+        VBox paneForBio = newVBox();
+        Label lbBio = new Label("Character Biography");
+        ScrollPane spBio = new ScrollPane();
+        TextArea taBio = new TextArea();
+        
+        
+        
 /* * * * * previous program stuff begin * * * * *
 		rbCircle.setOnAction(e -> {
 			if (rbCircle.isSelected()) {
@@ -424,7 +439,7 @@ public class OpenLegendCharacterEditor extends Application {
 				rectangle.setFill(Color.WHITE);			}
 		});
 * * * * * previous program stuff end * * * * */
-	    
+        
         // Create a scene and place it in the stage
         Scene scene = new Scene(pane, 1900, 1000);
         primaryStage.setTitle("OpenLegendCharacterEditor");
@@ -432,7 +447,7 @@ public class OpenLegendCharacterEditor extends Application {
         primaryStage.show();
     }   // end start
 
-    public class OLCharacter {
+    public class characterSheet {
 
         private String characterName;
         private String playerName;
@@ -465,7 +480,7 @@ public class OpenLegendCharacterEditor extends Application {
         private int speed = 30;
 
         // default constructor
-        public OLCharacter() {
+        public characterSheet() {
 
         }   // end default constructor
 
@@ -689,11 +704,10 @@ public class OpenLegendCharacterEditor extends Application {
             this.protection = value;
         }   // end setProtection
 
-    }	// end OpenLegendCharacterSheet class
+    }	// end characterSheet class
 
     public static void main(String[] args) {
         launch(args);
     }	// end main	
 
 }	// end OpenLegendCharacterEditor
-
