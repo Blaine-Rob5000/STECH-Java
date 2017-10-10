@@ -76,12 +76,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfAgilityCost = new TextField();
 			tfAgilityCost.setEditable(false);
 			tfAgilityCost.setAlignment(Pos.CENTER);
+			tfAgilityCost.setPrefWidth(50);
 		TextField tfAgilityValue = new TextField();
 			tfAgilityValue.setEditable(false);
 			tfAgilityValue.setAlignment(Pos.CENTER);
+			tfAgilityValue.setPrefWidth(50);
 		TextField tfAgilityDice = new TextField();
 			tfAgilityDice.setEditable(false);
 			tfAgilityDice.setAlignment(Pos.CENTER);
+			tfAgilityDice.setPrefWidth(50);
 		RadioButton rbAgility = new RadioButton("Agility");
 		paneForAgility.getChildren().addAll(
 				tfAgilityCost,
@@ -94,12 +97,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfFortitudeCost = new TextField();
 			tfFortitudeCost.setEditable(false);
 			tfFortitudeCost.setAlignment(Pos.CENTER);
+			tfFortitudeCost.setPrefWidth(50);
 		TextField tfFortitudeValue = new TextField();
 			tfFortitudeValue.setEditable(false);
 			tfFortitudeValue.setAlignment(Pos.CENTER);
+			tfFortitudeValue.setPrefWidth(50);
 		TextField tfFortitudeDice = new TextField();
 			tfFortitudeDice.setEditable(false);
 			tfFortitudeDice.setAlignment(Pos.CENTER);
+			tfFortitudeDice.setPrefWidth(50);
 		RadioButton rbFortitude = new RadioButton("Fortitude");
 		paneForFortitude.getChildren().addAll(
 				tfFortitudeCost,
@@ -112,12 +118,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfMightCost = new TextField();
 			tfMightCost.setEditable(false);
 			tfMightCost.setAlignment(Pos.CENTER);
+			tfMightCost.setPrefWidth(50);
 		TextField tfMightValue = new TextField();
 			tfMightValue.setEditable(false);
 			tfMightValue.setAlignment(Pos.CENTER);
+			tfMightValue.setPrefWidth(50);
 		TextField tfMightDice = new TextField();
 			tfMightDice.setEditable(false);
 			tfMightDice.setAlignment(Pos.CENTER);
+			tfMightDice.setPrefWidth(50);
 		RadioButton rbMight = new RadioButton("Might");
 		paneForMight.getChildren().addAll(
 				tfMightCost,
@@ -143,12 +152,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfLearningCost = new TextField();
 			tfLearningCost.setEditable(false);
 			tfLearningCost.setAlignment(Pos.CENTER);
+			tfLearningCost.setPrefWidth(50);
 		TextField tfLearningValue = new TextField();
 			tfLearningValue.setEditable(false);
 			tfLearningValue.setAlignment(Pos.CENTER);
+			tfLearningValue.setPrefWidth(50);
 		TextField tfLearningDice = new TextField();
 			tfLearningDice.setEditable(false);
 			tfLearningDice.setAlignment(Pos.CENTER);
+			tfLearningDice.setPrefWidth(50);
 		RadioButton rbLearning = new RadioButton("Learning");
 		paneForLearning.getChildren().addAll(
 				tfLearningCost,
@@ -161,12 +173,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfLogicCost = new TextField();
 			tfLogicCost.setEditable(false);
 			tfLogicCost.setAlignment(Pos.CENTER);
+			tfLogicCost.setPrefWidth(50);
 		TextField tfLogicValue = new TextField();
 			tfLogicValue.setEditable(false);
 			tfLogicValue.setAlignment(Pos.CENTER);
+			tfLogicValue.setPrefWidth(50);
 		TextField tfLogicDice = new TextField();
 			tfLogicDice.setEditable(false);
 			tfLogicDice.setAlignment(Pos.CENTER);
+			tfLogicDice.setPrefWidth(50);
 		RadioButton rbLogic = new RadioButton("Logic");
 		paneForLogic.getChildren().addAll(
 				tfLogicCost,
@@ -179,12 +194,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfPerceptionCost = new TextField();
 			tfPerceptionCost.setEditable(false);
 			tfPerceptionCost.setAlignment(Pos.CENTER);
+			tfPerceptionCost.setPrefWidth(50);
 		TextField tfPerceptionValue = new TextField();
 			tfPerceptionValue.setEditable(false);
 			tfPerceptionValue.setAlignment(Pos.CENTER);
+			tfPerceptionValue.setPrefWidth(50);
 		TextField tfPerceptionDice = new TextField();
 			tfPerceptionDice.setEditable(false);
 			tfPerceptionDice.setAlignment(Pos.CENTER);
+			tfPerceptionDice.setPrefWidth(50);
 		RadioButton rbPerception = new RadioButton("Perception");
 		paneForPerception.getChildren().addAll(
 				tfPerceptionCost,
@@ -197,12 +215,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfWillCost = new TextField();
 			tfWillCost.setEditable(false);
 			tfWillCost.setAlignment(Pos.CENTER);
+			tfWillCost.setPrefWidth(50);
 		TextField tfWillValue = new TextField();
 			tfWillValue.setEditable(false);
 			tfWillValue.setAlignment(Pos.CENTER);
+			tfWillValue.setPrefWidth(50);
 		TextField tfWillDice = new TextField();
 			tfWillDice.setEditable(false);
 			tfWillDice.setAlignment(Pos.CENTER);
+			tfWillDice.setPrefWidth(50);
 		RadioButton rbWill = new RadioButton("Will");
 		paneForWill.getChildren().addAll(
 				tfWillCost,
@@ -229,12 +250,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfDeceptionCost = new TextField();
 			tfDeceptionCost.setEditable(false);
 			tfDeceptionCost.setAlignment(Pos.CENTER);
+			tfDeceptionCost.setPrefWidth(50);
 		TextField tfDeceptionValue = new TextField();
 			tfDeceptionValue.setEditable(false);
 			tfDeceptionValue.setAlignment(Pos.CENTER);
+			tfDeceptionValue.setPrefWidth(50);
 		TextField tfDeceptionDice = new TextField();
 			tfDeceptionDice.setEditable(false);
 			tfDeceptionDice.setAlignment(Pos.CENTER);
+			tfDeceptionDice.setPrefWidth(50);
 		RadioButton rbDeception = new RadioButton("Deception");
 		paneForDeception.getChildren().addAll(
 				tfDeceptionCost,
@@ -247,12 +271,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfPersuasionCost = new TextField();
 			tfPersuasionCost.setEditable(false);
 			tfPersuasionCost.setAlignment(Pos.CENTER);
+			tfPersuasionCost.setPrefWidth(50);
 		TextField tfPersuasionValue = new TextField();
 			tfPersuasionValue.setEditable(false);
 			tfPersuasionValue.setAlignment(Pos.CENTER);
+			tfPersuasionValue.setPrefWidth(50);
 		TextField tfPersuasionDice = new TextField();
 			tfPersuasionDice.setEditable(false);
 			tfPersuasionDice.setAlignment(Pos.CENTER);
+			tfPersuasionDice.setPrefWidth(50);
 		RadioButton rbPersuasion = new RadioButton("Persuasion");
 		paneForPersuasion.getChildren().addAll(
 				tfPersuasionCost,
@@ -265,12 +292,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfPresenceCost = new TextField();
 			tfPresenceCost.setEditable(false);
 			tfPresenceCost.setAlignment(Pos.CENTER);
+			tfPresenceCost.setPrefWidth(50);
 		TextField tfPresenceValue = new TextField();
 			tfPresenceValue.setEditable(false);
 			tfPresenceValue.setAlignment(Pos.CENTER);
+			tfPresenceValue.setPrefWidth(50);
 		TextField tfPresenceDice = new TextField();
 			tfPresenceDice.setEditable(false);
 			tfPresenceDice.setAlignment(Pos.CENTER);
+			tfPresenceDice.setPrefWidth(50);
 		RadioButton rbPresence = new RadioButton("Presence");
 		paneForPresence.getChildren().addAll(
 				tfPresenceCost,
@@ -296,12 +326,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfAlterationCost = new TextField();
 			tfAlterationCost.setEditable(false);
 			tfAlterationCost.setAlignment(Pos.CENTER);
+			tfAlterationCost.setPrefWidth(50);
 		TextField tfAlterationValue = new TextField();
 			tfAlterationValue.setEditable(false);
 			tfAlterationValue.setAlignment(Pos.CENTER);
+			tfAlterationValue.setPrefWidth(50);
 		TextField tfAlterationDice = new TextField();
 			tfAlterationDice.setEditable(false);
 			tfAlterationDice.setAlignment(Pos.CENTER);
+			tfAlterationDice.setPrefWidth(50);
 		RadioButton rbAlteration = new RadioButton("Alteration");
 		paneForAlteration.getChildren().addAll(
 				tfAlterationCost,
@@ -314,12 +347,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfCreationCost = new TextField();
 			tfCreationCost.setEditable(false);
 			tfCreationCost.setAlignment(Pos.CENTER);
+			tfCreationCost.setPrefWidth(50);
 		TextField tfCreationValue = new TextField();
 			tfCreationValue.setEditable(false);
 			tfCreationValue.setAlignment(Pos.CENTER);
+			tfCreationValue.setPrefWidth(50);
 		TextField tfCreationDice = new TextField();
 			tfCreationDice.setEditable(false);
 			tfCreationDice.setAlignment(Pos.CENTER);
+			tfCreationDice.setPrefWidth(50);
 		RadioButton rbCreation = new RadioButton("Creation");
 		paneForCreation.getChildren().addAll(
 				tfCreationCost,
@@ -332,12 +368,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfEnergyCost = new TextField();
 			tfEnergyCost.setEditable(false);
 			tfEnergyCost.setAlignment(Pos.CENTER);
+			tfEnergyCost.setPrefWidth(50);
 		TextField tfEnergyValue = new TextField();
 			tfEnergyValue.setEditable(false);
 			tfEnergyValue.setAlignment(Pos.CENTER);
+			tfEnergyValue.setPrefWidth(50);
 		TextField tfEnergyDice = new TextField();
 			tfEnergyDice.setEditable(false);
 			tfEnergyDice.setAlignment(Pos.CENTER);
+			tfEnergyDice.setPrefWidth(50);
 		RadioButton rbEnergy = new RadioButton("Energy");
 		paneForEnergy.getChildren().addAll(
 				tfEnergyCost,
@@ -350,12 +389,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfEntropyCost = new TextField();
 			tfEntropyCost.setEditable(false);
 			tfEntropyCost.setAlignment(Pos.CENTER);
+			tfEntropyCost.setPrefWidth(50);
 		TextField tfEntropyValue = new TextField();
 			tfEntropyValue.setEditable(false);
 			tfEntropyValue.setAlignment(Pos.CENTER);
+			tfEntropyValue.setPrefWidth(50);
 		TextField tfEntropyDice = new TextField();
 			tfEntropyDice.setEditable(false);
 			tfEntropyDice.setAlignment(Pos.CENTER);
+			tfEntropyDice.setPrefWidth(50);
 		RadioButton rbEntropy = new RadioButton("Entropy");
 		paneForEntropy.getChildren().addAll(
 				tfEntropyCost,
@@ -368,12 +410,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfInfluenceCost = new TextField();
 			tfInfluenceCost.setEditable(false);
 			tfInfluenceCost.setAlignment(Pos.CENTER);
+			tfInfluenceCost.setPrefWidth(50);
 		TextField tfInfluenceValue = new TextField();
 			tfInfluenceValue.setEditable(false);
 			tfInfluenceValue.setAlignment(Pos.CENTER);
+			tfInfluenceValue.setPrefWidth(50);
 		TextField tfInfluenceDice = new TextField();
 			tfInfluenceDice.setEditable(false);
 			tfInfluenceDice.setAlignment(Pos.CENTER);
+			tfInfluenceDice.setPrefWidth(50);
 		RadioButton rbInfluence = new RadioButton("Influence");
 		paneForInfluence.getChildren().addAll(
 				tfInfluenceCost,
@@ -386,12 +431,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfMovementCost = new TextField();
 			tfMovementCost.setEditable(false);
 			tfMovementCost.setAlignment(Pos.CENTER);
+			tfMovementCost.setPrefWidth(50);
 		TextField tfMovementValue = new TextField();
 			tfMovementValue.setEditable(false);
 			tfMovementValue.setAlignment(Pos.CENTER);
+			tfMovementValue.setPrefWidth(50);
 		TextField tfMovementDice = new TextField();
 			tfMovementDice.setEditable(false);
 			tfMovementDice.setAlignment(Pos.CENTER);
+			tfMovementDice.setPrefWidth(50);
 		RadioButton rbMovement = new RadioButton("Movement");
 		paneForMovement.getChildren().addAll(
 				tfMovementCost,
@@ -404,12 +452,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfPrescienceCost = new TextField();
 			tfPrescienceCost.setEditable(false);
 			tfPrescienceCost.setAlignment(Pos.CENTER);
+			tfPrescienceCost.setPrefWidth(50);
 		TextField tfPrescienceValue = new TextField();
 			tfPrescienceValue.setEditable(false);
 			tfPrescienceValue.setAlignment(Pos.CENTER);
+			tfPrescienceValue.setPrefWidth(50);
 		TextField tfPrescienceDice = new TextField();
 			tfPrescienceDice.setEditable(false);
 			tfPrescienceDice.setAlignment(Pos.CENTER);
+			tfPrescienceDice.setPrefWidth(50);
 		RadioButton rbPrescience = new RadioButton("Prescience");
 		paneForPrescience.getChildren().addAll(
 				tfPrescienceCost,
@@ -422,12 +473,15 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfProtectionCost = new TextField();
 			tfProtectionCost.setEditable(false);
 			tfProtectionCost.setAlignment(Pos.CENTER);
+			tfProtectionCost.setPrefWidth(50);
 		TextField tfProtectionValue = new TextField();
 			tfProtectionValue.setEditable(false);
 			tfProtectionValue.setAlignment(Pos.CENTER);
+			tfProtectionValue.setPrefWidth(50);
 		TextField tfProtectionDice = new TextField();
 			tfProtectionDice.setEditable(false);
 			tfProtectionDice.setAlignment(Pos.CENTER);
+			tfProtectionDice.setPrefWidth(50);
 		RadioButton rbProtection = new RadioButton("Protection");
 		paneForProtection.getChildren().addAll(
 				tfProtectionCost,
@@ -461,9 +515,8 @@ public class OpenLegendCharacterEditor extends Application {
 
 		// add items to pane for attributes
 		Label lbAttributeFields = new Label("Cost    Attribute    Value    Dice");
-		Label lbPoints = new Label("Points:");
+		Label lbPoints = new Label("Attribute Points");
 		paneForAttributes.getChildren().addAll(
-				lbAttributes,
 				lbAttributeFields,
 				paneForPhysicalAttributes,
 				paneForMentalAttributes,
