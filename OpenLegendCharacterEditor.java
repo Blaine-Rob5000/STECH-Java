@@ -43,8 +43,9 @@ public class OpenLegendCharacterEditor extends Application {
 	public void start(Stage primaryStage) {
 		// variables
 		String[] attributeDice = new String[]
-			{"-", "1d4", "1d6", "1d8", "1d10", "2d6", "2d8", "2d10", "3d8", "3d10", "4d8"};
+			{"", "1d4", "1d6", "1d8", "1d10", "2d6", "2d8", "2d10", "3d8", "3d10", "4d8"};
 		int[] attributeCost = new int[] {0, 1, 3, 6, 10, 15};
+		String attributeFieldsString = "Cost    Attribute    Value    Dice";
 		
 		CharacterSheet characterSheet = new CharacterSheet();
 		
@@ -58,12 +59,14 @@ public class OpenLegendCharacterEditor extends Application {
 		paneForNames.getChildren().addAll(tfCharacterName, tfPlayerName);
 
 		pane.setTop(paneForNames);
+		
 
 		// pane for attributes; goes in the left field of the main pane
 		VBox paneForAttributes = new VBox();
 
 		// 1st item in VBox pane for attributes
 		Label lbAttributes = new Label("Attributes");
+		Label lbAttributeFields1 = new Label(attributeFieldsString);
 
 		// pane for physical attributes; 2nd item in VBox pane for attributes
 		VBox paneForPhysicalAttributes = new VBox();
@@ -137,6 +140,7 @@ public class OpenLegendCharacterEditor extends Application {
 		// add items to pane for physical attributes
 		paneForPhysicalAttributes.getChildren().addAll(
 				lbPhysicalAttributes,
+				lbAttributeFields1,
 				paneForAgility,
 				paneForFortitude,
 				paneForMight);
@@ -146,6 +150,7 @@ public class OpenLegendCharacterEditor extends Application {
 
 		// 1st item in VBox pane for mental attributes
 		Label lbMentalAttributes = new Label("Mental Attributes");
+		Label lbAttributeFields2 = new Label(attributeFieldsString);
 
 		// learning attribute pane; 2nd item in VBox pane for mental attributes
 		HBox paneForLearning = new HBox();
@@ -234,6 +239,7 @@ public class OpenLegendCharacterEditor extends Application {
 		// add items to pane for mental attributes
 		paneForMentalAttributes.getChildren().addAll(
 				lbMentalAttributes,
+				lbAttributeFields2,
 				paneForLearning,
 				paneForLogic,
 				paneForPerception,
@@ -244,7 +250,8 @@ public class OpenLegendCharacterEditor extends Application {
 
 		// 1st item in pane for social attributes
 		Label lbSocialAttributes = new Label("Social Attributes");
-
+		Label lbAttributeFields3 = new Label(attributeFieldsString);
+		
 		// deception attribute pane; 2nd item in VBox pane for social attributes
 		HBox paneForDeception = new HBox();
 		TextField tfDeceptionCost = new TextField();
@@ -311,6 +318,7 @@ public class OpenLegendCharacterEditor extends Application {
 		// add items to pane for social attributes
 		paneForSocialAttributes.getChildren().addAll(
 				lbSocialAttributes,
+				lbAttributeFields3,
 				paneForDeception,
 				paneForPersuasion,
 				paneForPresence);
@@ -320,7 +328,8 @@ public class OpenLegendCharacterEditor extends Application {
 
 		// 1st item in pane for extraordinary attributes
 		Label lbExtraordinaryAttributes = new Label("Extraordinary Attributes");
-
+		Label lbAttributeFields4 = new Label(attributeFieldsString);
+		
 		// alteration attribute; 2nd item in pane for extraordinary attributes
 		HBox paneForAlteration = new HBox();
 		TextField tfAlterationCost = new TextField();
@@ -492,6 +501,7 @@ public class OpenLegendCharacterEditor extends Application {
 		// add items to pane for extraordinary attributes
 		paneForExtraordinaryAttributes.getChildren().addAll(
 				lbExtraordinaryAttributes,
+				lbAttributeFields4,
 				paneForAlteration,
 				paneForCreation,
 				paneForEnergy,
@@ -506,6 +516,7 @@ public class OpenLegendCharacterEditor extends Application {
 		TextField tfAttributePoints = new TextField("40 / 40");
 			tfAttributePoints.setEditable(false);
 			tfAttributePoints.setAlignment(Pos.CENTER);
+			tfAttributePoints.setPrefWidth(80);
 		Button btIncreaseAttribute = new Button("Increase +");
 		Button btDecreaseAttribute = new Button("Decrease -");
 		paneForAttributeControls.getChildren().addAll(
@@ -514,10 +525,9 @@ public class OpenLegendCharacterEditor extends Application {
 				btDecreaseAttribute);
 
 		// add items to pane for attributes
-		Label lbAttributeFields = new Label("Cost    Attribute    Value    Dice");
 		Label lbPoints = new Label("Attribute Points");
 		paneForAttributes.getChildren().addAll(
-				lbAttributeFields,
+				lbAttributes,
 				paneForPhysicalAttributes,
 				paneForMentalAttributes,
 				paneForSocialAttributes,
