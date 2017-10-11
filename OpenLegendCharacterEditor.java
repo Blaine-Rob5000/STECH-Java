@@ -616,12 +616,13 @@ public class OpenLegendCharacterEditor extends Application {
         Pane imagePane = new Pane();
         Image characterImage = new Image("DefaultImage.jpg");
         ImageView characterImageView = new ImageView(characterImage);
-            characterImageView.setFitWidth(200);
-            characterImageView.setFitHeight(300);
+            characterImageView.setFitWidth(sceneWidth * .125);
+            characterImageView.setFitHeight(sceneHeight * .375);
             characterImageView.setPreserveRatio(true);
+            characterImageView.setSmooth(true);
         imagePane.getChildren().add(characterImageView);
         TextField tfImageLocation = new TextField();
-            tfImageLocation.setPrefWidth(200);
+            tfImageLocation.setPrefWidth(sceneWidth * .125);
         
         VBox paneForSecondaryStats = new VBox();
         
