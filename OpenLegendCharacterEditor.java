@@ -59,8 +59,8 @@ public class OpenLegendCharacterEditor extends Application {
         int[] attributeCost = new int[]{0, 1, 3, 6, 10, 15};
         int rbSpacing   = 8;
         int rbPaneWidth = 100;
-        int sceneWidth  = 1600;
-        int sceneHeight = 800;
+        int sceneWidth  = 1580;
+        int sceneHeight = 780;
         
         // declare constants
         final String AGILITY_DESCRIPTION =
@@ -101,28 +101,30 @@ public class OpenLegendCharacterEditor extends Application {
                 "Protection:\n\nProtect from damage, break supernatural influence, dispel magic, exile extradimensional beings";
 
 
-
         CharacterSheet characterSheet = new CharacterSheet();
 
         // the main pane
         BorderPane pane = new BorderPane();
+            pane.setPadding(new Insets(5, 5, 5, 5));
 
         // pane for names; goes in the top field of the main pane
-        HBox paneForNames     = new HBox(10);
+        HBox topPane     = new HBox(10);
+            topPane.setPadding(new Insets(5, 5, 5, 5));
         TextField tfCharacterName = new TextField();
         tfCharacterName.setPrefWidth(300);
         TextField tfPlayerName = new TextField();
         tfPlayerName.setPrefWidth(300);
-        paneForNames.getChildren().addAll(
+        topPane.getChildren().addAll(
                 new Label("  Character Name:"),
                 tfCharacterName,
                 new Label("  Player Name:"),
                 tfPlayerName);
 
-        pane.setTop(paneForNames);
+        pane.setTop(topPane);
 
         // pane for attributes; goes in the left field of the main pane
-        VBox paneForAttributes = new VBox();
+        VBox leftPane = new VBox();
+            leftPane.setPadding(new Insets(5, 5, 5, 5));
         
         HBox paneForPhysicalAttributes = new HBox();
         
@@ -546,7 +548,7 @@ public class OpenLegendCharacterEditor extends Application {
                 btDecreaseAttribute);
 
         // add items to pane for attributes
-        paneForAttributes.getChildren().addAll(
+        leftPane.getChildren().addAll(
                 new Label("        Physical Attributes"),
                 paneForPhysicalAttributes,
                 new Label("        Mental Attributes"),
@@ -558,7 +560,7 @@ public class OpenLegendCharacterEditor extends Application {
                 new Label("  Points"),
                 paneForAttributeControls);
 
-        pane.setLeft(paneForAttributes);
+        pane.setLeft(leftPane);
         
         
         // Create a ToggleGroup for the attribute selection radio buttons
@@ -583,7 +585,8 @@ public class OpenLegendCharacterEditor extends Application {
         rbProtection.setToggleGroup(attributeToggleGroup);
 
         
-        HBox paneForDescriptions = new HBox(10);
+        HBox bottomPane = new HBox(10);
+            bottomPane.setPadding(new Insets(5, 5, 5, 5));
 
         VBox paneForMessages = new VBox();
         TextArea taDescription = new TextArea();
@@ -604,14 +607,15 @@ public class OpenLegendCharacterEditor extends Application {
                 new Label("Character Biography"),
                 spBio);
 
-        paneForDescriptions.getChildren().addAll(
+        bottomPane.getChildren().addAll(
                 paneForMessages,
                 paneForBio);
 
-        pane.setBottom(paneForDescriptions);
+        pane.setBottom(bottomPane);
         
         
-        VBox rightSidePane = new VBox(10);
+        VBox rightPane = new VBox(10);
+            rightPane.setPadding(new Insets(5, 5, 5, 5));
         
         Pane imagePane = new Pane();
         Image characterImage = new Image("DefaultImage.jpg");
@@ -678,7 +682,7 @@ public class OpenLegendCharacterEditor extends Application {
                 paneForHitPoints,
                 paneForSpeed);
         
-        rightSidePane.getChildren().addAll(
+        rightPane.getChildren().addAll(
                 new Label("Character Image"),
                 imagePane,
                 new Label("Filename"),
@@ -686,7 +690,7 @@ public class OpenLegendCharacterEditor extends Application {
                 new Label("\n\n  Secondary Stats"),
                 paneForSecondaryStats);
         
-        pane.setRight(rightSidePane);
+        pane.setRight(rightPane);
         
         tfImageLocation.setOnMouseClicked(e -> {
             taDescription.setText("Enter the name of an image file...");
@@ -700,6 +704,118 @@ public class OpenLegendCharacterEditor extends Application {
                 taDescription.setText("Error!  Image not found...");
             };
         });
+        
+        
+        VBox centerPane = new VBox(10);
+            centerPane.setPadding(new Insets(5, 5, 5, 5));
+        
+        HBox paneForFeats = new HBox(10);
+        
+        TextArea taFeatList = new TextArea();
+            taFeatList.setEditable(false);
+            taFeatList.setPrefWidth(sceneWidth * .33);
+            taFeatList.setPrefHeight(sceneHeight * .33);
+            taFeatList.setWrapText(true);
+        ScrollPane spFeatList = new ScrollPane(taFeatList);
+        
+        VBox paneForFeatChecklist = new VBox();
+            paneForFeatChecklist.setPrefWidth(sceneWidth * .33);
+            paneForFeatChecklist.setPrefHeight(sceneHeight * .33);
+        CheckBox chkAlternateForm1    = new CheckBox("Alternate Form I");
+        CheckBox chkAlternateForm2    = new CheckBox("  Alternate Form II");
+        CheckBox chkAreaManipulation1 = new CheckBox("Area Manipulation I");
+        CheckBox chkAreaManipulation2 = new CheckBox("  Area Manipulation II");
+        CheckBox chkAreaManipulation3 = new CheckBox("  Area Manipulation III");
+        CheckBox chkAreaManipulation4 = new CheckBox("  Area Manipulation IV");
+        CheckBox chkAreaManipulation5 = new CheckBox("  Area Manipulation V");
+        CheckBox chkArmorMastery1     = new CheckBox("Armor Mastery I");
+        CheckBox chkArmorMastery2     = new CheckBox("  Armor Mastery II");
+        CheckBox chkAttackRedirection = new CheckBox("Attack Redirection");
+        paneForFeatChecklist.getChildren().addAll(
+                chkAlternateForm1,
+                chkAlternateForm2,
+                chkAreaManipulation1,
+                chkAreaManipulation2,
+                chkAreaManipulation3,
+                chkAreaManipulation4,
+                chkAreaManipulation5,
+                chkArmorMastery1,
+                chkArmorMastery2,
+                chkAttackRedirection);
+        ScrollPane spFeatChecklist = new ScrollPane(paneForFeatChecklist);
+        
+        paneForFeats.getChildren().addAll(
+                spFeatList,
+                spFeatChecklist);
+        
+        HBox paneForEquipment = new HBox(10);
+        
+        TextArea taEquipmentList = new TextArea();
+            taEquipmentList.setEditable(false);
+            taEquipmentList.setPrefWidth(sceneWidth * .33);
+            taEquipmentList.setPrefHeight(sceneHeight * .33);
+            taEquipmentList.setWrapText(true);
+        ScrollPane spEquipmentList = new ScrollPane(taEquipmentList);
+        
+        TextArea taEquipmentSelection = new TextArea();
+            taEquipmentSelection.setPrefWidth(sceneWidth * .33);
+            taEquipmentSelection.setPrefHeight(sceneHeight * .33);
+            taEquipmentSelection.setWrapText(true);
+        ScrollPane spEquipmentSelection = new ScrollPane(taEquipmentSelection);
+        
+        paneForEquipment.getChildren().addAll(
+                spEquipmentList,
+                spEquipmentSelection);
+        
+        centerPane.getChildren().addAll(
+                new Label("  Feats"),
+                paneForFeats,
+                new Label("  Equipment"),
+                paneForEquipment);
+        
+        pane.setCenter(centerPane);
+        
+        
+        chkAlternateForm1.setOnAction(e -> {
+            taDescription.setText(
+                "Cost: 3 points\n" +
+                "Prerequisites:\n" +
+                "Tier 1 - 2: None\n\n" +
+                "Description:\n" +
+                "You have the ability to transform from one persona to another, whether that be through bodily transformation like a werewolf or through exterior mechanisms, such as a cybernetically enhanced soldier who can call forth a symbiotic mech suit.\n" +
+                "\n" +
+                "Effect:\n" +
+                "Upon taking this feat, you build a single alternate form using the normal character creation rules, though your attribute and feat points are determined by your tier in this feat:\n" +
+                "Tier 1 - Half of your primary form's attribute points (rounded up), and 3 feat points.\n" +
+                "Tier 2 - Same attribute points as your primary form, and 3 feat points less than your primary form.\n" +
+                "\n" +
+                "Whenever your primary form gains new attribute points or levels up, your alternate form also gains points according to the above formulas.\n" +
+                "As a focus action, you may change between any two forms (including your primary form or any alternate form). You maintain this capability in all of your forms.\n" +
+                "Each form is treated as a completely different character for mechanical purposes - possessing different attributes, feats, perks, flaws, and other defining characteristics. Your alternate form does, however, retain the ability to transform back into your primary form.\n" +
+                "In order to keep track of hit points, you should always record the total damage that your character has suffered. When transforming, your damage remains with you even if your maximum hit points change. For example, Dr. Jekyll has a max HP of 15 and Mr. Hyde has a max HP of 30. During combat, Mr. Hyde suffers 10 damage. When he later transforms back into Dr. Jekyll, the 10 damage remains and is subtracted from his new maximum, leaving the doctor with 5 out of 15 hit points. Additionally, when changing forms, if your hit points would be reduced to less than 1, your hit point total becomes 1 instead.\n" +
+                "\n" +
+                "Special:\n" +
+                "When selecting feats for your alternate form, you may not select the Alternate Form feat.\n" +
+                "With GM approval, you may take this feat multiple times. If you do, you get access to an additional form. Multiple Alternate Forms can be a powerful way of accumulating new feat points and attributes. The GM should prevent players from exploiting the feat to create an overly powerful character.");
+            });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         
         
         // create handlers for radio buttons
