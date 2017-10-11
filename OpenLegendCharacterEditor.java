@@ -35,6 +35,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -557,9 +558,9 @@ public class OpenLegendCharacterEditor extends Application {
                 new Label("  Points"),
                 paneForAttributeControls);
 
-        // place pane for attributes in the left field of the main pane
         pane.setLeft(paneForAttributes);
-
+        
+        
         // Create a ToggleGroup for the attribute selection radio buttons
         ToggleGroup attributeToggleGroup = new ToggleGroup();
         rbAgility.setToggleGroup(attributeToggleGroup);
@@ -581,6 +582,7 @@ public class OpenLegendCharacterEditor extends Application {
         rbPrescience.setToggleGroup(attributeToggleGroup);
         rbProtection.setToggleGroup(attributeToggleGroup);
 
+        
         HBox paneForDescriptions = new HBox(10);
 
         VBox paneForMessages = new VBox();
@@ -608,9 +610,96 @@ public class OpenLegendCharacterEditor extends Application {
 
         pane.setBottom(paneForDescriptions);
         
-
-
-
+        
+        VBox rightSidePane = new VBox(10);
+        
+        Pane imagePane = new Pane();
+        Image characterImage = new Image("DefaultImage.jpg");
+        ImageView characterImageView = new ImageView(characterImage);
+            characterImageView.setFitWidth(200);
+            characterImageView.setFitHeight(300);
+            characterImageView.setPreserveRatio(true);
+        imagePane.getChildren().add(characterImageView);
+        TextField tfImageLocation = new TextField();
+            tfImageLocation.setPrefWidth(200);
+        
+        VBox paneForSecondaryStats = new VBox();
+        
+        HBox paneForToughness = new HBox();
+        TextField tfToughnessDefense = new TextField("10");
+            tfToughnessDefense.setEditable(false);
+            tfToughnessDefense.setAlignment(Pos.CENTER);
+            tfToughnessDefense.setPrefWidth(50);
+        paneForToughness.getChildren().addAll(
+                tfToughnessDefense,
+                new Label("  Toughness Defense"));
+        
+        HBox paneForGuard = new HBox();
+        TextField tfGuardDefense = new TextField("10");
+            tfGuardDefense.setEditable(false);
+            tfGuardDefense.setAlignment(Pos.CENTER);
+            tfGuardDefense.setPrefWidth(50);
+        paneForGuard.getChildren().addAll(
+                tfGuardDefense,
+                new Label("  Guard Defense"));
+        
+        HBox paneForResolve = new HBox();
+        TextField tfResolveDefense   = new TextField("10");
+            tfResolveDefense.setEditable(false);
+            tfResolveDefense.setAlignment(Pos.CENTER);
+            tfResolveDefense.setPrefWidth(50);
+        paneForResolve.getChildren().addAll(
+                tfResolveDefense,
+                new Label("  Resolve Defense"));
+        
+        HBox paneForHitPoints = new HBox();
+        TextField tfHitPoints = new TextField("10");
+            tfHitPoints.setEditable(false);
+            tfHitPoints.setAlignment(Pos.CENTER);
+            tfHitPoints.setPrefWidth(50);
+        paneForHitPoints.getChildren().addAll(
+                tfHitPoints,
+                new Label ("  Hit Points"));
+        
+        HBox paneForSpeed = new HBox();
+        TextField tfSpeed = new TextField("30'");
+            tfSpeed.setEditable(false);
+            tfSpeed.setAlignment(Pos.CENTER);
+            tfSpeed.setPrefWidth(50);
+        paneForSpeed.getChildren().addAll(
+                tfSpeed,
+                new Label("  Speed"));
+        
+        paneForSecondaryStats.getChildren().addAll(
+                paneForToughness,
+                paneForGuard,
+                paneForResolve,
+                paneForHitPoints,
+                paneForSpeed);
+        
+        rightSidePane.getChildren().addAll(
+                new Label("Character Image"),
+                imagePane,
+                new Label("Filename"),
+                tfImageLocation,
+                new Label("\n\n  Secondary Stats"),
+                paneForSecondaryStats);
+        
+        pane.setRight(rightSidePane);
+        
+        tfImageLocation.setOnMouseClicked(e -> {
+            taDescription.setText("Enter the name of an image file...");
+        });
+        
+        tfImageLocation.setOnAction(e -> {
+            String imageLocation = tfImageLocation.getText();
+            try {
+                characterImageView.setImage(new Image(imageLocation));
+            } catch (Exception exception) {
+                taDescription.setText("Error!  Image not found...");
+            };
+        });
+        
         
         // create handlers for radio buttons
         rbAgility.setOnAction(e -> {
@@ -666,6 +755,7 @@ public class OpenLegendCharacterEditor extends Application {
                     maximumAttributePoints = Integer.toString(characterSheet.getAttributePointsMaximum());
                     tfAttributePoints.setText(currentAttributePoints + " / " + maximumAttributePoints);
                     tfAgilityDice.setText(attributeDice[value]);
+                    tfGuardDefense.setText(Integer.toString(characterSheet.getGuardDefense()));
                     taDescription.setText(AGILITY_DESCRIPTION);
                     if (value == 0) {
                         tfAgilityCost.setText("");
@@ -686,6 +776,8 @@ public class OpenLegendCharacterEditor extends Application {
                     maximumAttributePoints = Integer.toString(characterSheet.getAttributePointsMaximum());
                     tfAttributePoints.setText(currentAttributePoints + " / " + maximumAttributePoints);
                     tfFortitudeDice.setText(attributeDice[value]);
+                    tfToughnessDefense.setText(Integer.toString(characterSheet.getToughnessDefense()));
+                    tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                     taDescription.setText(FORTITUDE_DESCRIPTION);
                     if (value == 0) {
                         tfFortitudeCost.setText("");
@@ -706,6 +798,7 @@ public class OpenLegendCharacterEditor extends Application {
                     maximumAttributePoints = Integer.toString(characterSheet.getAttributePointsMaximum());
                     tfAttributePoints.setText(currentAttributePoints + " / " + maximumAttributePoints);
                     tfMightDice.setText(attributeDice[value]);
+                    tfGuardDefense.setText(Integer.toString(characterSheet.getGuardDefense()));
                     taDescription.setText(MIGHT_DESCRIPTION);
                     if (value == 0) {
                         tfMightCost.setText("");
@@ -786,6 +879,9 @@ public class OpenLegendCharacterEditor extends Application {
                     maximumAttributePoints = Integer.toString(characterSheet.getAttributePointsMaximum());
                     tfAttributePoints.setText(currentAttributePoints + " / " + maximumAttributePoints);
                     tfWillDice.setText(attributeDice[value]);
+                    tfToughnessDefense.setText(Integer.toString(characterSheet.getToughnessDefense()));
+                    tfResolveDefense.setText(Integer.toString(characterSheet.getResolveDefense()));
+                    tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                     taDescription.setText(WILL_DESCRIPTION);
                     if (value == 0) {
                         tfWillCost.setText("");
@@ -846,6 +942,8 @@ public class OpenLegendCharacterEditor extends Application {
                     maximumAttributePoints = Integer.toString(characterSheet.getAttributePointsMaximum());
                     tfAttributePoints.setText(currentAttributePoints + " / " + maximumAttributePoints);
                     tfPresenceDice.setText(attributeDice[value]);
+                    tfResolveDefense.setText(Integer.toString(characterSheet.getResolveDefense()));
+                    tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                     taDescription.setText(PRESENCE_DESCRIPTION);
                     if (value == 0) {
                         tfPresenceCost.setText("");
@@ -1040,6 +1138,7 @@ public class OpenLegendCharacterEditor extends Application {
                         tfAgilityCost.setText(Integer.toString(attributeCost[value]));
                         tfAgilityValue.setText(Integer.toString(value));
                         tfAgilityDice.setText(attributeDice[value]);
+                        tfGuardDefense.setText(Integer.toString(characterSheet.getGuardDefense()));
                         taDescription.setText(AGILITY_DESCRIPTION);
                     }
                 }
@@ -1060,6 +1159,8 @@ public class OpenLegendCharacterEditor extends Application {
                         tfFortitudeCost.setText(Integer.toString(attributeCost[value]));
                         tfFortitudeValue.setText(Integer.toString(value));
                         tfFortitudeDice.setText(attributeDice[value]);
+                        tfToughnessDefense.setText(Integer.toString(characterSheet.getToughnessDefense()));
+                        tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                         taDescription.setText(FORTITUDE_DESCRIPTION);
                     }
                 }
@@ -1080,6 +1181,7 @@ public class OpenLegendCharacterEditor extends Application {
                         tfMightCost.setText(Integer.toString(attributeCost[value]));
                         tfMightValue.setText(Integer.toString(value));
                         tfMightDice.setText(attributeDice[value]);
+                        tfGuardDefense.setText(Integer.toString(characterSheet.getGuardDefense()));
                         taDescription.setText(MIGHT_DESCRIPTION);
                     }
                 }
@@ -1160,6 +1262,9 @@ public class OpenLegendCharacterEditor extends Application {
                         tfWillCost.setText(Integer.toString(attributeCost[value]));
                         tfWillValue.setText(Integer.toString(value));
                         tfWillDice.setText(attributeDice[value]);
+                        tfToughnessDefense.setText(Integer.toString(characterSheet.getToughnessDefense()));
+                        tfResolveDefense.setText(Integer.toString(characterSheet.getResolveDefense()));
+                        tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                         taDescription.setText(WILL_DESCRIPTION);
                     }
                 }
@@ -1220,6 +1325,8 @@ public class OpenLegendCharacterEditor extends Application {
                         tfPresenceCost.setText(Integer.toString(attributeCost[value]));
                         tfPresenceValue.setText(Integer.toString(value));
                         tfPresenceDice.setText(attributeDice[value]);
+                        tfResolveDefense.setText(Integer.toString(characterSheet.getResolveDefense()));
+                        tfHitPoints.setText(Integer.toString(characterSheet.getHitPoints()));
                         taDescription.setText(PRESENCE_DESCRIPTION);
                     }
                 }
@@ -1484,6 +1591,7 @@ public class OpenLegendCharacterEditor extends Application {
 
             if ((value >= 0) && (value <= 5) && (difference <= this.attributePointsCurrent)) {
                 this.agility = value;
+                this.guardDefense = 10 + agility + might;
                 this.attributePointsCurrent -= difference;
             }	// end if
         }   // end setAgility
@@ -1501,6 +1609,8 @@ public class OpenLegendCharacterEditor extends Application {
 
             if ((value >= 0) && (value <= 5) && (difference <= this.attributePointsCurrent)) {
                 this.fortitude = value;
+                this.toughnessDefense = 10 + fortitude + will;
+                this.hitPoints = 10 + 2 * (fortitude + presence + will);
                 this.attributePointsCurrent -= difference;
             }	// end if
         }   // end setFortitude
@@ -1518,6 +1628,7 @@ public class OpenLegendCharacterEditor extends Application {
 
             if ((value >= 0) && (value <= 5) && (difference <= this.attributePointsCurrent)) {
                 this.might = value;
+                this.guardDefense = 10 + agility + might;
                 this.attributePointsCurrent -= difference;
             }	// end if
         }   // end setMight
@@ -1586,6 +1697,9 @@ public class OpenLegendCharacterEditor extends Application {
 
             if ((value >= 0) && (value <= 5) && (difference <= this.attributePointsCurrent)) {
                 this.will = value;
+                this.toughnessDefense = 10 + fortitude + will;
+                this.resolveDefense = 10 + presence + will;
+                this.hitPoints = 10 + 2 * (fortitude + presence + will);
                 this.attributePointsCurrent -= difference;
             }	// end if
         }   // end setWill
@@ -1637,6 +1751,8 @@ public class OpenLegendCharacterEditor extends Application {
 
             if ((value >= 0) && (value <= 5) && (difference <= this.attributePointsCurrent)) {
                 this.presence = value;
+                this.resolveDefense = 10 + presence + will;
+                this.hitPoints = 10 + 2 * (fortitude + presence + will);
                 this.attributePointsCurrent -= difference;
             }	// end if
         }   // end setPresence
@@ -1786,8 +1902,44 @@ public class OpenLegendCharacterEditor extends Application {
         public int getAttributePointsMaximum() {
             return attributePointsMaximum;
         }	// end getAttributePointsMaximum
-
-        // get attributePointsMaximum
+        
+        /*
+        toughnessDefense = 10 + Fortitude + Will
+        guardDefense = 10 + Might + Agility + Armor
+        resolveDefense = 10 + Presence + Will
+        hitPoints = 10 + 2*Fortitude + 2*Presence + 2*Will
+        speed = 30'
+        */
+        
+        // get toughnessDefense
+        public int getToughnessDefense() {
+            this.toughnessDefense = 10 + fortitude + will;
+            return toughnessDefense;
+        }   // end getToughnessDefense
+        
+        // get guardDefense
+        public int getGuardDefense() {
+            this.guardDefense = 10 + agility + might;
+            return guardDefense;
+        }   // end getGuardDefense
+        
+        // get resolveDefense
+        public int getResolveDefense() {
+            this.resolveDefense = 10 + presence + will;
+            return resolveDefense;
+        }   // end getResolveDefense
+        
+        // get hitPoints
+        public int getHitPoints() {
+            this.hitPoints = 10 + 2 * (fortitude + presence + will);
+            return hitPoints;
+        }   // end getHitPoints
+        
+        // get speed
+        public int getSpeed() {
+            return speed;
+        }   // end getSpeed
+        
     }	// end characterSheet class
 
     public static void main(String[] args) {
