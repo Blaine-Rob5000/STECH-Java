@@ -122,7 +122,6 @@ public class OpenLegendCharacterEditor extends Application {
 
 		pane.setTop(topPane);
 
-		// pane for attributes; goes in the left field of the main pane
 		VBox leftPane = new VBox();
 			leftPane.setPadding(new Insets(5, 5, 5, 5));
 		
@@ -822,24 +821,6 @@ public class OpenLegendCharacterEditor extends Application {
 				"When selecting feats for your alternate form, you may not select the Alternate Form feat.\n" +
 				"With GM approval, you may take this feat multiple times. If you do, you get access to an additional form. Multiple Alternate Forms can be a powerful way of accumulating new feat points and attributes. The GM should prevent players from exploiting the feat to create an overly powerful character.");
 			});
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		// create handlers for radio buttons
