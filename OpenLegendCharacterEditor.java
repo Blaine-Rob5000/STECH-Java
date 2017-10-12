@@ -685,7 +685,7 @@ public class OpenLegendCharacterEditor extends Application {
 		rightPane.getChildren().addAll(
 				new Label("Character Image"),
 				imagePane,
-				new Label("Filename"),
+				new Label("Image Filename:"),
 				tfImageLocation,
 				new Label("\n\n  Secondary Stats"),
 				paneForSecondaryStats);
