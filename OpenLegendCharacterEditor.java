@@ -59,8 +59,8 @@ public class OpenLegendCharacterEditor extends Application {
 		int[] attributeCost = new int[]{0, 1, 3, 6, 10, 15};
 		int rbSpacing   = 8;
 		int rbPaneWidth = 100;
-		int sceneWidth  = 1580;
-		int sceneHeight = 780;
+		int sceneWidth  = 1500;
+		int sceneHeight = 750;
 		
 		// declare constants
 		final String AGILITY_DESCRIPTION =
@@ -106,6 +106,7 @@ public class OpenLegendCharacterEditor extends Application {
 		// the main pane
 		BorderPane pane = new BorderPane();
 			pane.setPadding(new Insets(5, 5, 5, 5));
+
 
 		// pane for names; goes in the top field of the main pane
 		HBox topPane     = new HBox(10);
@@ -797,6 +798,8 @@ public class OpenLegendCharacterEditor extends Application {
 				paneForEquipment);
 		
 		pane.setCenter(centerPane);
+		ScrollPane mainPane = new ScrollPane(pane);
+
 		
 		
 		chkAlternateForm1.setOnAction(e -> {
@@ -1616,7 +1619,7 @@ public class OpenLegendCharacterEditor extends Application {
 		});
 
 		// Create a scene and place it in the stage
-		Scene scene = new Scene(pane, sceneWidth, sceneHeight);
+		Scene scene = new Scene(mainPane, sceneWidth, sceneHeight);
 		primaryStage.setTitle("OpenLegendCharacterEditor");
 		primaryStage.setScene(scene);
 		primaryStage.show();
